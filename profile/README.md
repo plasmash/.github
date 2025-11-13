@@ -43,8 +43,8 @@ Function (computation) → Skill (configuration) → Flow (orchestration)
 
 ### Application Components (Infrastructure)
 Software (computation) → Service (configuration) → Application (orchestration)
-- **Software**: Core programs (e.g., Postgres, Grafana, Jupyter)
-- **Services**: Configured deployments (e.g., `dashboards_postgres`)
+- **Softwares**: Core programs (e.g., Postgres, Grafana)
+- **Services**: Configured deployments (e.g., `dashboards_postgres`, `dashboards_grafana`)
 - **Applications**: Orchestrated business capabilities (e.g., `dashboards` app)
 
 ## Use Cases
