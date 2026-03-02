@@ -146,7 +146,7 @@ nav {
 
 /* ── Hero ── */
 .hero {
-  padding: 80px 0 64px;
+  padding: 80px 0;
   text-align: center;
 }
 
@@ -317,7 +317,7 @@ section + section {
 .arch-table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto auto 12px auto;
+  grid-template-rows: repeat(5, auto);
   gap: 12px;
 }
 
@@ -405,7 +405,7 @@ section + section {
 .arch-el.el-cv { border-color: #10b981; }
 .arch-el.el-cv .arch-el-sym { color: #6ee7b7; }
 .arch-el.el-fd { border-color: #94a3b8; grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; }
-.arch-el.el-fd .arch-el-sym { color: #94a3b8; font-size: 1.4rem; }
+.arch-el.el-fd .arch-el-sym { color: #94a3b8; }
 .arch-el.el-fd .arch-el-name { margin-top: 0; }
 .arch-el.el-fd .arch-el-tech { margin-top: 0; opacity: 0.6; }
 
@@ -446,19 +446,18 @@ section + section {
   border-color: var(--accent);
 }
 
-/* Spacer row */
-.arch-table-spacer {
-  grid-column: 1 / -1;
-}
-
 .infinity-8 {
   display: inline-block;
   margin-right: -0.1em;
-  animation: spin-8 6s linear infinite;
+  animation: inf-bounce 3s ease-in-out infinite;
 }
-@keyframes spin-8 {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes inf-bounce {
+  0%, 100% { transform: rotate(90deg); }
+  22% { transform: rotate(-10deg); }
+  32% { transform: rotate(5deg); }
+  40%, 60% { transform: rotate(0deg); }
+  72% { transform: rotate(100deg); }
+  82% { transform: rotate(85deg); }
 }
 
 /* ── Concepts grid ── */
@@ -569,7 +568,7 @@ section + section {
 
 .model-card {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: flex-start;
 }
 
@@ -640,6 +639,12 @@ section + section {
   text-transform: uppercase;
   color: var(--text-secondary);
   margin-bottom: 20px;
+}
+
+.model-label + .model-label,
+.partners-grid + .model-label,
+.model-card + .model-label {
+  margin-top: 48px;
 }
 
 .partners-grid {
@@ -901,7 +906,7 @@ section + section {
 .community-card p {
   font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .community-link {
@@ -976,7 +981,7 @@ footer {
   }
   .nav-toggle { display: block; }
 
-  .hero { padding: 48px 0 40px; }
+  .hero { padding: 48px 0; }
   .hero-logo svg { height: 36px; }
 
   .arch-layout { max-width: 100%; }
@@ -1136,9 +1141,6 @@ footer {
         <span class="arch-el-name">Conversation</span>
         <span class="arch-el-tech">Deepseek, Llama, Matrix</span>
       </div>
-
-      <!-- Spacer -->
-      <div class="arch-table-spacer"></div>
 
       <!-- Row 5: Foundation (full width) -->
       <div class="arch-el el-fd" data-layer="Fd" data-desc="Infrastructure and observability for all layers">
@@ -1360,7 +1362,7 @@ footer {
       </div>
     </div>
 
-    <div class="model-label" style="margin-top: 48px;">Integrators</div>
+    <div class="model-label">Integrators</div>
     <div class="partners-grid">
       <div class="partner-card">
         <h3><a href="https://skilld.cloud">Skilld</a></h3>
@@ -1372,7 +1374,7 @@ footer {
       </div>
     </div>
 
-    <div class="model-label" style="margin-top: 48px;">Managed services</div>
+    <div class="model-label">Managed services</div>
     <div class="partners-grid">
       <div class="partner-card">
         <h3><a href="https://skilld.cloud">Plasma Cloud</a></h3>
@@ -1768,6 +1770,7 @@ function detailPanel(selector, attr, symId, textId) {
   });
 }
 detailPanel('.arch-el[data-layer]', 'data-layer', 'arch-detail-sym', 'arch-detail-text');
+
 
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
