@@ -332,6 +332,8 @@ section + section {
   position: relative;
   transition: border-color 0.2s, background 0.2s;
   cursor: default;
+  height: 90px;
+  overflow: hidden;
 }
 
 .arch-el:hover {
@@ -378,8 +380,10 @@ section + section {
   align-items: baseline;
   gap: 10px;
   margin-top: 16px;
-  min-height: 1.6em;
+  height: 2.6em;
   justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 .arch-detail-sym {
   font-family: var(--font-mono);
@@ -396,7 +400,7 @@ section + section {
 /* Active layer colors */
 .arch-el.el-cg { border-color: #8b5cf6; }
 .arch-el.el-cg .arch-el-sym { color: #c4b5fd; }
-.arch-el.el-st { grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; }
+.arch-el.el-st { grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; height: 48px; }
 .arch-el.el-st .arch-el-name { margin-top: 0; }
 .arch-el.el-in { border-color: #06b6d4; border-width: 2.5px; grid-column: 2; grid-row: 3; }
 .arch-el.el-in .arch-el-sym { color: #67e8f9; font-size: 2.2rem; }
@@ -404,7 +408,7 @@ section + section {
 .arch-el.el-ia .arch-el-sym { color: #f9a8d4; }
 .arch-el.el-cv { border-color: #10b981; }
 .arch-el.el-cv .arch-el-sym { color: #6ee7b7; }
-.arch-el.el-fd { border-color: #94a3b8; grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; }
+.arch-el.el-fd { border-color: #94a3b8; grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; height: 48px; }
 .arch-el.el-fd .arch-el-sym { color: #94a3b8; }
 .arch-el.el-fd .arch-el-name { margin-top: 0; }
 .arch-el.el-fd .arch-el-tech { margin-top: 0; opacity: 0.6; }
@@ -1760,8 +1764,9 @@ function detailPanel(selector, attr, symId, textId) {
   var defaultText = text.textContent;
   document.querySelectorAll(selector).forEach(function(el) {
     el.addEventListener('mouseenter', function() {
+      var name = el.querySelector('.arch-el-name');
       sym.textContent = el.getAttribute(attr);
-      text.textContent = el.getAttribute('data-desc');
+      text.textContent = (name ? name.textContent + ' — ' : '') + el.getAttribute('data-desc');
     });
     el.addEventListener('mouseleave', function() {
       sym.textContent = '';
