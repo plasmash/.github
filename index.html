@@ -396,17 +396,19 @@ section + section {
 /* Active layer colors */
 .arch-el.el-cg { border-color: #8b5cf6; }
 .arch-el.el-cg .arch-el-sym { color: #c4b5fd; }
-.arch-el.el-st { grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; }
+.arch-el.el-st { grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; align-items: center; }
 .arch-el.el-st .arch-el-name { margin-top: 0; }
+.arch-el.el-st .arch-el-tech { margin-top: 0; }
 .arch-el.el-in { border-color: #06b6d4; border-width: 2.5px; grid-column: 2; grid-row: 3; }
 .arch-el.el-in .arch-el-sym { color: #67e8f9; font-size: 2.2rem; }
 .arch-el.el-ia { border-color: #ec4899; }
 .arch-el.el-ia .arch-el-sym { color: #f9a8d4; }
 .arch-el.el-cv { border-color: #10b981; }
 .arch-el.el-cv .arch-el-sym { color: #6ee7b7; }
-.arch-el.el-fd { border-color: #94a3b8; grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; }
+.arch-el.el-fd { border-color: #94a3b8; grid-column: 1 / -1; padding: 10px; flex-direction: row; gap: 16px; justify-content: center; align-items: center; }
 .arch-el.el-fd .arch-el-sym { color: #94a3b8; }
 .arch-el.el-fd .arch-el-name { margin-top: 0; }
+.arch-el.el-fd .arch-el-tech { margin-top: 0; }
 
 /* Planned/ghost elements */
 .arch-el.planned {
@@ -1544,10 +1546,10 @@ footer {
         </div>
       </a>
 
-      <a href="#" data-forge="plasmactl-chassis" class="repo-item">
+      <a href="#" data-forge="plasmactl-topology" class="repo-item">
         <div class="repo-left">
-          <span class="repo-name">plasmactl-chassis</span>
-          <span class="repo-desc">Chassis management — map components to physical resources</span>
+          <span class="repo-name">plasmactl-topology</span>
+          <span class="repo-desc">Topology management — map zones to physical resources</span>
         </div>
         <div class="repo-right">
           <span class="repo-lang"><span class="repo-lang-dot go"></span> Go</span>
@@ -1673,7 +1675,7 @@ footer {
 
       <div class="community-card">
         <h3>Discuss</h3>
-        <p>Ask questions, share ideas, and connect with other Plasma engineers.</p>
+        <p>Ask questions, share ideas, and connect with other Plasma engineers and contributors.</p>
         <a href="#" data-forge="discussions" class="community-link">Discussions →</a>
       </div>
 
@@ -1685,7 +1687,7 @@ footer {
 
       <div class="community-card">
         <h3>License</h3>
-        <p>Licensed under EUPL-1.2 — copyleft, OSI-approved, and GPL-compatible. Use, modify, and distribute with confidence.</p>
+        <p>EUPL-1.2 — copyleft, OSI-approved, GPL-compatible. Use, modify, distribute freely.</p>
         <a href="#" data-forge="org" class="community-link">View license →</a>
       </div>
     </div>
