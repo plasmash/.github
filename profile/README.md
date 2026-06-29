@@ -23,13 +23,16 @@ A complete digital operating system for organizations - sensing what's happening
 
 ## Architecture
 
-**5-Layer System**
+**8-Layer System**
 
-- **Foundation**: Infrastructure provisioning and observability collection
-- **Integration**: Central data exchange hub (all data flows through here)
-- **Cognition**: AI/ML processing, analytics, and real-time intelligence
-- **Conversation**: Natural language processing and AI interactions
-- **Interaction**: Dashboards, visualization, and external system interfaces
+- **Foundation**: Infrastructure and observability — public cloud, private cloud, on-prem, air-gapped
+- **Integration**: Central hub for all business data exchange (all data flows through here)
+- **Cognition**: AI/ML, analytics, and real-time intelligence processing
+- **Conversation**: Natural language processing, chatbots, and AI interactions
+- **Vision**: Computer vision, image recognition, visual perception
+- **Audition**: Audio processing, speech recognition, acoustic perception
+- **Interaction**: Dashboards, visualization, monitoring, and external interfaces
+- **Stabilization**: System health monitoring and performance optimization across all layers
 
 ## Component Model
 
