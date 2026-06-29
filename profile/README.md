@@ -38,11 +38,11 @@ A complete digital operating system for organizations - sensing what's happening
 
 Plasma uses **two parallel three-layer patterns**:
 
-### Flow Components (Event-Driven Logic)
-Function (computation) → Skill (configuration) → Flow (orchestration)
-- **Functions**: Universal computational units (e.g., `washer` function)
+### Event-Driven Components
+Function (computation) → Skill (configuration) → Agent (orchestration)
+- **Functions**: Universal computational units (e.g., `washer`)
 - **Skills**: Configured functions for specific use cases (e.g., `car-wash`, `hand-wash`)
-- **Flows**: Event-triggered execution (e.g., "wash car when returns from countryside")
+- **Agents**: Event- or schedule-triggered execution; an agent embeds its trigger and selects a skill from its repertoire (e.g., "wash the car when it returns from the countryside")
 
 ### Application Components (Infrastructure)
 Software (computation) → Service (configuration) → Application (orchestration)
