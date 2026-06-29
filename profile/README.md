@@ -64,7 +64,7 @@ Deploy anywhere:
 
 ## License
 
-Apache-2.0
+[EUPL-1.2](https://github.com/plasmash/.github/blob/main/LICENSE)
 
 ---
 Learn more: https://plasma.sh
